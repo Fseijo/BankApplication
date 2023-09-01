@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BankApplication.iml" filepath="$PROJECT_DIR$/.idea/BankApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms_accounts/ms_accounts.iml" filepath="$PROJECT_DIR$/ms_accounts/ms_accounts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms_cards/ms_cards.iml" filepath="$PROJECT_DIR$/ms_cards/ms_cards.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms_loans/ms_loans.iml" filepath="$PROJECT_DIR$/ms_loans/ms_loans.iml" />
+    </modules>
+  </component>
+</project>
