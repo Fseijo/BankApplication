@@ -1,4 +1,4 @@
-package com.seijo.ms_accounts.config;
+package com.seijo.ms_cards.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,9 +10,11 @@ import java.util.List;
 import java.util.Map;
 
 @Configuration
-@ConfigurationProperties(prefix = "accounts")
-@Getter @Setter @ToString
-public class AccountsServiceConfig {
+@ConfigurationProperties(prefix = "cards")
+@Getter
+@Setter
+@ToString
+public class CardsServiceConfig {
     private String msg;
     private String buildVersion;
     private Map<String, String> mailDetails;
