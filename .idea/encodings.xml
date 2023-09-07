@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/ms_accounts/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms_cards/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms_cards/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_configserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_configserver/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms_loans/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms_loans/src/main/resources" charset="UTF-8" />
   </component>

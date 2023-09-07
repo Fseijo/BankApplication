@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ms_cards" />
         <module name="ms_loans" />
+        <module name="ms_configserver" />
         <module name="ms_accounts" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ms_accounts" options="-parameters" />
       <module name="ms_cards" options="-parameters" />
+      <module name="ms_configserver" options="-parameters" />
       <module name="ms_loans" options="-parameters" />
     </option>
   </component>
