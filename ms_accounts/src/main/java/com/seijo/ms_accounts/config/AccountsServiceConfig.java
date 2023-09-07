@@ -18,9 +18,4 @@ public class AccountsServiceConfig {
     private String buildVersion;
     private Map<String, String> mailDetails;
     private List<String> activeBranches;
-
-    @Bean
-    public void toto(){
-        int i = 0;
-    }
 }
