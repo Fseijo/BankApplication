@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  serverconfig:
+    image: fseijo/ms_configserver:latest
+    restart: always
+    mem_limit: 700m
+    ports:
+      - "8071:8071"
+    networks:
+      - bankapplication-network
+
+  accounts:
+    image: fseijo/ms_accounts:latest
+    restart: always
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    depends_on:
+      - serverconfig
+    networks:
+      - bankapplication-network
+
+  loans:
+    image: fseijo/ms_loans:latest
+    restart: always
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    depends_on:
+      - serverconfig
+    networks:
+      - bankapplication-network
+
+  cards:
+    image: fseijo/ms_cards:latest
+    restart: always
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    depends_on:
+      - serverconfig
+    networks:
+      - bankapplication-network
+
+networks:
+  bankapplication-network:

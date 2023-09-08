@@ -8,7 +8,7 @@
 		<version>3.0.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.seijo</groupId>
+	<groupId>com.fseijo</groupId>
 	<artifactId>ms_cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MS_Cards</name>
