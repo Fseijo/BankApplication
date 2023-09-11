@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9c9e76bf-00f9-4157-a277-c144be123d9d" name="Changes" comment="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +41,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/StagiaireDEV/IdeaProjects/BankApplication/ms_accounts/docker-compose/prod&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/StagiaireDEV/IdeaProjects/BankAppJC",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.16206896",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\StagiaireDEV\IdeaProjects\BankApplication\ms_accounts\docker-compose\prod" />
@@ -53,7 +58,7 @@
       <recent name="C:\Users\StagiaireDEV\IdeaProjects\BankApplication\ms_accounts\docker-compose\default" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MSConfigServerApplication">
+  <component name="RunManager" selected="Application.MsAccountsApplication">
     <configuration name="MSConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fseijo.ms_configserver.MSConfigServerApplication" />
       <module name="ms_configserver" />
@@ -122,8 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MSConfigServerApplication" />
         <item itemvalue="Application.MsAccountsApplication" />
+        <item itemvalue="Application.MSConfigServerApplication" />
         <item itemvalue="Application.MsLoansApplication" />
         <item itemvalue="Application.MsCardsApplication" />
         <item itemvalue="Docker.dev: Compose Deployment" />
@@ -146,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694179697563</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer">
+      <created>1694426590551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694426590551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

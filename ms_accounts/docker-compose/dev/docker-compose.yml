@@ -24,7 +24,10 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      SPRING_CONFIG_IMPORT: optional:configserver:http://localhost:8071/
+#      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
+
+
     networks:
       - bankapplication
 
@@ -43,7 +46,8 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      SPRING_CONFIG_IMPORT: optional:configserver:http://localhost:8071/
+#      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
     networks:
       - bankapplication
 
@@ -62,7 +66,8 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      SPRING_CONFIG_IMPORT: optional:configserver:http://localhost:8071/
+#      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
     networks:
       - bankapplication
 

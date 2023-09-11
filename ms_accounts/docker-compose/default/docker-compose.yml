@@ -3,7 +3,6 @@ version: "3.8"
 services:
   serverconfig:
     image: fseijo/ms_configserver:latest
-    restart: always
     mem_limit: 700m
     ports:
       - "8071:8071"
@@ -26,49 +25,50 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: default
-      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
+#      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
+      SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
     networks:
       - bankapplication-network
 
-  loans:
-    image: fseijo/ms_loans:latest
-    restart: always
-    mem_limit: 700m
-    ports:
-      - "8090:8090"
-    depends_on:
-      - serverconfig
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
-    environment:
-      SPRING_PROFILES_ACTIVE: default
-      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
-    networks:
-      - bankapplication-network
-
-  cards:
-    image: fseijo/ms_cards:latest
-    restart: always
-    mem_limit: 700m
-    ports:
-      - "9000:9000"
-    depends_on:
-      - serverconfig
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
-    environment:
-      SPRING_PROFILES_ACTIVE: default
-      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
-    networks:
-      - bankapplication-network
+#  loans:
+#    image: fseijo/ms_loans:latest
+#    restart: always
+#    mem_limit: 700m
+#    ports:
+#      - "8090:8090"
+#    depends_on:
+#      - serverconfig
+#    deploy:
+#      restart_policy:
+#        condition: on-failure
+#        delay: 5s
+#        max_attempts: 3
+#        window: 120s
+#    environment:
+#      SPRING_PROFILES_ACTIVE: default
+#      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
+#    networks:
+#      - bankapplication-network
+#
+#  cards:
+#    image: fseijo/ms_cards:latest
+#    restart: always
+#    mem_limit: 700m
+#    ports:
+#      - "9000:9000"
+#    depends_on:
+#      - serverconfig
+#    deploy:
+#      restart_policy:
+#        condition: on-failure
+#        delay: 5s
+#        max_attempts: 3
+#        window: 120s
+#    environment:
+#      SPRING_PROFILES_ACTIVE: default
+#      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
+#    networks:
+#      - bankapplication-network
 
 networks:
   bankapplication-network:
