@@ -4,45 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c9e76bf-00f9-4157-a277-c144be123d9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/prod/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/config/LoansServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/model/Properties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="9c9e76bf-00f9-4157-a277-c144be123d9d" name="Changes" comment="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/MsAccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/MsAccountsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/config/AccountsServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/config/AccountsServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/model/Accounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/model/Accounts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/model/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/model/Properties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/repositories/AccountsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/repositories/AccountsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/seijo/ms_accounts/repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/repositories/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/test/java/com/seijo/ms_accounts/MsAccountsApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/test/java/com/fseijo/ms_accounts/MsAccountsApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/MsCardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/MsCardsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/config/CardsServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/config/CardsServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/controller/CardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/model/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/model/Cards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/model/Properties.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/model/Properties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/seijo/ms_cards/repositories/CardsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/repositories/CardsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_cards/src/test/java/com/seijo/ms_cards/MsCardsApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/test/java/com/fseijo/ms_cards/MsCardsApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/seijo/ms_loans/MsLoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/MsLoansApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/seijo/ms_loans/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/seijo/ms_loans/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/seijo/ms_loans/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/model/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/seijo/ms_loans/repositories/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/repositories/LoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_loans/src/test/java/com/seijo/ms_loans/MsLoansApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/test/java/com/fseijo/ms_loans/MsLoansApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +39,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/StagiaireDEV/IdeaProjects/BankApplication/ms_accounts/docker-compose/prod",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/StagiaireDEV/IdeaProjects/BankApplication/ms_accounts/docker-compose/prod&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\StagiaireDEV\IdeaProjects\BankApplication\ms_accounts\docker-compose\prod" />
@@ -88,7 +53,7 @@
       <recent name="C:\Users\StagiaireDEV\IdeaProjects\BankApplication\ms_accounts\docker-compose\default" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.dev: Compose Deployment">
+  <component name="RunManager" selected="Application.MSConfigServerApplication">
     <configuration name="MSConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fseijo.ms_configserver.MSConfigServerApplication" />
       <module name="ms_configserver" />
@@ -142,7 +107,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="dev: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -155,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.dev: Compose Deployment" />
+        <item itemvalue="Application.MSConfigServerApplication" />
         <item itemvalue="Application.MsAccountsApplication" />
         <item itemvalue="Application.MsLoansApplication" />
         <item itemvalue="Application.MsCardsApplication" />
-        <item itemvalue="Application.MSConfigServerApplication" />
+        <item itemvalue="Docker.dev: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +139,34 @@
       <option name="presentableId" value="Default" />
       <updated>1694158713344</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer">
+      <created>1694179697563</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694179697563</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

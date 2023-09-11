@@ -3,12 +3,11 @@ version: "3.8"
 services:
   configserver:
     image: fseijo/ms_configserver:latest
-    restart: always
     mem_limit: 700m
     ports:
       - "8071:8071"
     networks:
-      - bankapplication-network
+      - bankapplication
 
   accounts:
     image: fseijo/ms_accounts:latest
@@ -25,9 +24,9 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      SPRING_CONFIG_IMPORT: optional:configserver:http://localhost:8071/
     networks:
-      - bankapplication-network
+      - bankapplication
 
   loans:
     image: fseijo/ms_loans:latest
@@ -44,9 +43,9 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      SPRING_CONFIG_IMPORT: optional:configserver:http://localhost:8071/
     networks:
-      - bankapplication-network
+      - bankapplication
 
   cards:
     image: fseijo/ms_cards:latest
@@ -63,9 +62,9 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
+      SPRING_CONFIG_IMPORT: optional:configserver:http://localhost:8071/
     networks:
-      - bankapplication-network
+      - bankapplication
 
 networks:
-  bankapplication-network:
+  bankapplication:
