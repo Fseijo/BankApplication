@@ -11,7 +11,7 @@
     <groupId>com.fseijo</groupId>
     <artifactId>ms_loans</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MS_Loans</name>
+    <name>ms_loans</name>
     <description>Bank Application</description>
 
     <!--	///////////////////////////////////////-->
@@ -58,8 +58,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-context</artifactId>
-            <version>4.0.4</version>
-            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 

@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c9e76bf-00f9-4157-a277-c144be123d9d" name="Changes" comment="Update 2.1&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;&#10;To FIX:&#10;Connexion:&#10;- YAML {DEFAULT, DEV,PROD} ==&gt; configServer">
+    <list default="true" id="9c9e76bf-00f9-4157-a277-c144be123d9d" name="Changes" comment="Update 2.2.0&#10;&#10;Added:&#10;- Readme&#10;&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/prod/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/prod/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_configserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_configserver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,10 +119,10 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="dev: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="prod: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="ms_accounts/docker-compose/dev/docker-compose.yml" />
+          <option name="sourceFilePath" value="ms_accounts/docker-compose/prod/docker-compose.yml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -128,9 +131,9 @@
       <list>
         <item itemvalue="Application.MsAccountsApplication" />
         <item itemvalue="Application.MSConfigServerApplication" />
+        <item itemvalue="Docker.prod: Compose Deployment" />
         <item itemvalue="Application.MsLoansApplication" />
         <item itemvalue="Application.MsCardsApplication" />
-        <item itemvalue="Docker.dev: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>

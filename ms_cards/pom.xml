@@ -11,7 +11,7 @@
 	<groupId>com.fseijo</groupId>
 	<artifactId>ms_cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MS_Cards</name>
+	<name>ms_cards</name>
 	<description>Bank Application</description>
 	<!--	///////////////////////////////////////-->
 	<!--	/////////////PROPERTIES////////////////-->
@@ -52,7 +52,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-			<version>4.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
 

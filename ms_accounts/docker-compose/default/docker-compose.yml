@@ -5,7 +5,7 @@ services:
     image: fseijo/ms_configserver:latest
     mem_limit: 700m
     ports:
-      - "8071:8071"
+      - "8073:8071"
     networks:
       - bankapplication-network
 
@@ -14,7 +14,7 @@ services:
     restart: always
     mem_limit: 700m
     ports:
-      - "8080:8080"
+      - "8087:8080"
     depends_on:
       - serverconfig
     deploy:
@@ -35,7 +35,7 @@ services:
     restart: always
     mem_limit: 700m
     ports:
-      - "8090:8090"
+      - "8097:8090"
     depends_on:
       - serverconfig
     deploy:
@@ -56,7 +56,7 @@ services:
     restart: always
     mem_limit: 700m
     ports:
-      - "9000:9000"
+      - "9007:9000"
     depends_on:
       - serverconfig
     deploy:
