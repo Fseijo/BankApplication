@@ -1,21 +1,22 @@
 version: "3.8"
 
 services:
-  configserver:
+  serverconfig:
     image: fseijo/ms_configserver:latest
     mem_limit: 700m
     ports:
       - "8071:8071"
     networks:
-      - bankapplication
+      - bankapplication-network
 
   accounts:
     image: fseijo/ms_accounts:latest
+    restart: always
     mem_limit: 700m
     ports:
       - "8080:8080"
     depends_on:
-      - configserver
+      - serverconfig
     deploy:
       restart_policy:
         condition: on-failure
@@ -24,20 +25,19 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-#      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
-
-
     networks:
-      - bankapplication
+      - bankapplication-network
 
   loans:
     image: fseijo/ms_loans:latest
+    restart: always
     mem_limit: 700m
     ports:
       - "8090:8090"
     depends_on:
-      - configserver
+      - serverconfig
     deploy:
       restart_policy:
         condition: on-failure
@@ -46,18 +46,19 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-#      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
     networks:
-      - bankapplication
+      - bankapplication-network
 
   cards:
     image: fseijo/ms_cards:latest
+    restart: always
     mem_limit: 700m
     ports:
       - "9000:9000"
     depends_on:
-      - configserver
+      - serverconfig
     deploy:
       restart_policy:
         condition: on-failure
@@ -66,10 +67,10 @@ services:
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
-#      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
     networks:
-      - bankapplication
+      - bankapplication-network
 
 networks:
-  bankapplication:
+  bankapplication-network:
