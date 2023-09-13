@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ms_cards" />
+        <module name="eurekaserver" />
         <module name="ms_loans" />
         <module name="ms_configserver" />
         <module name="ms_accounts" />
@@ -16,6 +17,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eurekaserver" options="-parameters" />
       <module name="ms_accounts" options="-parameters" />
       <module name="ms_cards" options="-parameters" />
       <module name="ms_configserver" options="-parameters" />
