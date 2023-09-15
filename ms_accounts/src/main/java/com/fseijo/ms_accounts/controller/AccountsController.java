@@ -4,10 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fseijo.ms_accounts.config.AccountsServiceConfig;
-import com.fseijo.ms_accounts.model.Accounts;
-import com.fseijo.ms_accounts.model.Customer;
+import com.fseijo.ms_accounts.model.*;
 import com.fseijo.ms_accounts.repositories.AccountsRepository;
-import com.fseijo.ms_accounts.model.Properties;
+import com.fseijo.ms_accounts.service.client.CardsFeignClient;
+import com.fseijo.ms_accounts.service.client.LoansFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +20,8 @@ public class AccountsController {
     private final AccountsRepository accountsRepository;
 
     private final AccountsServiceConfig accConfigServ;
+    private final LoansFeignClient loansFeignClient;
+    private final CardsFeignClient cardsFeignClient;
 
 
     @RequestMapping(value = "myAccount", method = RequestMethod.POST)
@@ -33,5 +35,19 @@ public class AccountsController {
         Properties properties = new Properties(accConfigServ.getMsg(), accConfigServ.getBuildVersion(), accConfigServ.getMailDetails(), accConfigServ.getActiveBranches());
         String jsonStr = objectWriter.writeValueAsString(properties);
         return jsonStr;
+    }
+
+    @RequestMapping(value = "/myCoustomerDetails", method = RequestMethod.POST)
+    public CustomerDetails myCustomerDetails(@RequestBody Customer customer){
+        List<Accounts> accountsList = accountsRepository.findAllByCustomerId(customer.getCustomerId());
+        List<Loan> loansList = loansFeignClient.getLoansDetails(customer);
+        List<Cards> cardsList = cardsFeignClient.getCardsDetails(customer);
+
+        CustomerDetails customerDetails = new CustomerDetails();
+        customerDetails.setAccounts(accountsList);
+        customerDetails.setLoans(loansList);
+        customerDetails.setCards(cardsList);
+
+        return customerDetails;
     }
 }

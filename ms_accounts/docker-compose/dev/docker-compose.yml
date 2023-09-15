@@ -1,74 +1,112 @@
 version: "3.8"
 
 services:
-  serverconfig:
+  configserver:
     image: fseijo/ms_configserver:latest
-    mem_limit: 700m
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 700M
     ports:
       - "8071:8071"
     networks:
       - bankapplication-network
 
-  accounts:
-    image: fseijo/ms_accounts:latest
+  eurekaserver:
+    image: fseijo/eurekaserver:latest
     restart: always
-    mem_limit: 700m
+    ports:
+      - "8070:8070"
+    depends_on:
+      - configserver
+    deploy:
+      resources:
+        limits:
+          memory: 700M
+      restart_policy:
+        condition: on-failure
+        delay: 15s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
+    networks:
+      - bankapplication-network
+
+  accounts:
+    image: fseijo/ms_accounts:v2.0.0
+    restart: always
     ports:
       - "8080:8080"
     depends_on:
-      - serverconfig
+      - configserver
+      - eurekaserver
     deploy:
+      resources:
+        limits:
+          memory: 700M
       restart_policy:
         condition: on-failure
-        delay: 5s
+        delay: 30s
         max_attempts: 3
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
       #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://host.docker.internal:8070/eureka/
     networks:
       - bankapplication-network
 
   loans:
     image: fseijo/ms_loans:latest
     restart: always
-    mem_limit: 700m
     ports:
       - "8090:8090"
     depends_on:
-      - serverconfig
+      - configserver
+      - eurekaserver
     deploy:
+      resources:
+        limits:
+          memory: 700M
       restart_policy:
         condition: on-failure
-        delay: 5s
+        delay: 30s
         max_attempts: 3
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
       #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://host.docker.internal:8070/eureka/
     networks:
       - bankapplication-network
 
   cards:
     image: fseijo/ms_cards:latest
     restart: always
-    mem_limit: 700m
     ports:
       - "9000:9000"
     depends_on:
-      - serverconfig
+      - configserver
+      - eurekaserver
     deploy:
+      resources:
+        limits:
+          memory: 700M
       restart_policy:
         condition: on-failure
-        delay: 5s
+        delay: 30s
         max_attempts: 3
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: dev
       #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://host.docker.internal:8070/eureka/
     networks:
       - bankapplication-network
 

@@ -4,28 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cabfd9d2-f668-4253-bae6-8ef6e9525ca5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/eurekaserver/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/src/main/java/com/fseijo/eurekaserver/EurekaserverApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/src/test/java/com/fseijo/eurekaserver/EurekaserverApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cabfd9d2-f668-4253-bae6-8ef6e9525ca5" name="Changes" comment="Update 2.2.1&#10;Added:&#10;- EurekaServer Application Microservice&#10;- Connexion config between configserver =&gt; eurekaserver =&gt; ms_accounts&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer">
+      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/model/Cards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/model/CustomerDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/model/Loan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/service/client/CardsFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/service/client/LoansFeignClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/docker-compose/dev/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/MsAccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/MsAccountsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/MsCardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/MsCardsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/MsLoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/MsLoansApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,15 +60,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.16206896&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.fseijo.ms_accounts.model" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.MsAccountsApplication">
     <configuration name="EurekaserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fseijo.eurekaserver.EurekaserverApplication" />
@@ -101,8 +114,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MsCardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fseijo.ms_cards.MsCardsApplication" />
+      <module name="ms_cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fseijo.ms_cards.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsLoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fseijo.ms_loans.MsLoansApplication" />
+      <module name="ms_loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fseijo.ms_loans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MsLoansApplication" />
+        <item itemvalue="Application.MsCardsApplication" />
         <item itemvalue="Application.MsAccountsApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.MSConfigServerApplication" />
@@ -118,6 +159,18 @@
       <option name="presentableId" value="Default" />
       <updated>1694603854259</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update 2.2.1&#10;Added:&#10;- EurekaServer Application Microservice&#10;- Connexion config between configserver =&gt; eurekaserver =&gt; ms_accounts&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer">
+      <created>1694612430731</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694612430731</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update 2.2.1&#10;Added:&#10;- EurekaServer Application Microservice&#10;- Connexion config between configserver =&gt; eurekaserver =&gt; ms_accounts&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 2.2.1&#10;Added:&#10;- EurekaServer Application Microservice&#10;- Connexion config between configserver =&gt; eurekaserver =&gt; ms_accounts&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
   </component>
 </project>

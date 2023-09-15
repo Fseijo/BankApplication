@@ -97,7 +97,7 @@
 						<env>
 							<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
 						</env>
-						<name>fseijo/${project.artifactId}</name>
+						<name>fseijo/${project.artifactId}:v2.0.0</name>
 					</image>
 				</configuration>
 			</plugin>
