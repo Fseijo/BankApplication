@@ -8,6 +8,7 @@ import com.fseijo.ms_accounts.model.*;
 import com.fseijo.ms_accounts.repositories.AccountsRepository;
 import com.fseijo.ms_accounts.service.client.CardsFeignClient;
 import com.fseijo.ms_accounts.service.client.LoansFeignClient;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +38,7 @@ public class AccountsController {
         return jsonStr;
     }
 
+    @CircuitBreaker(name = "detailsForCustomerSupportApp")
     @RequestMapping(value = "/myCoustomerDetails", method = RequestMethod.POST)
     public CustomerDetails myCustomerDetails(@RequestBody Customer customer){
         List<Accounts> accountsList = accountsRepository.findAllByCustomerId(customer.getCustomerId());

@@ -2,7 +2,8 @@ version: "3.8"
 
 services:
   configserver:
-    image: fseijo/ms_configserver:latest
+    image: fseijo/ms_configserver:v1.0.0
+    container_name: c_configserver-v1.0.0
     restart: always
     deploy:
       resources:
@@ -14,7 +15,8 @@ services:
       - bankapplication-network
 
   eurekaserver:
-    image: fseijo/eurekaserver:latest
+    image: fseijo/eurekaserver:v1.0.0
+    container_name: c_eurekaserver-v1.0.0
     restart: always
     ports:
       - "8070:8070"
@@ -36,7 +38,7 @@ services:
       - bankapplication-network
 
   accounts:
-    image: fseijo/ms_accounts:v2.0.0
+    image: fseijo/ms_accounts:v2.1.0
     restart: always
     ports:
       - "8080:8080"
@@ -57,11 +59,13 @@ services:
       #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://host.docker.internal:8070/eureka/
+      LANG: C.UTF-8 # Special Characters
     networks:
       - bankapplication-network
 
   loans:
-    image: fseijo/ms_loans:latest
+    image: fseijo/ms_loans:v1.1.0
+    container_name: c_loans-v1.1.0
     restart: always
     ports:
       - "8090:8090"
@@ -82,11 +86,13 @@ services:
       #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://host.docker.internal:8070/eureka/
+      LANG: C.UTF-8
     networks:
       - bankapplication-network
 
   cards:
-    image: fseijo/ms_cards:latest
+    image: fseijo/ms_cards:v1.1.0
+    container_name: c_cards-v1.1.0
     restart: always
     ports:
       - "9000:9000"
@@ -107,6 +113,7 @@ services:
       #      SPRING_CONFIG_IMPORT: configserver:http://localhost:8071/
       SPRING_CONFIG_IMPORT: configserver:http://host.docker.internal:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://host.docker.internal:8070/eureka/
+      LANG: C.UTF-8
     networks:
       - bankapplication-network
 

@@ -66,6 +66,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+		</dependency>
 	</dependencies>
 	<!--	///////////////////////////////////////-->
 	<!--	/////////DEPENDENCY MANAGEMENT/////////-->
@@ -97,7 +101,7 @@
 						<env>
 							<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
 						</env>
-						<name>fseijo/${project.artifactId}:v2.0.0</name>
+						<name>fseijo/${project.artifactId}:v2.1.0</name>
 					</image>
 				</configuration>
 			</plugin>
