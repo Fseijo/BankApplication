@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fseijo.ms_accounts.config.AccountsServiceConfig;
 import com.fseijo.ms_accounts.model.*;
-import com.fseijo.ms_accounts.repositories.AccountsRepository;
-import com.fseijo.ms_accounts.service.client.CardsFeignClient;
-import com.fseijo.ms_accounts.service.client.LoansFeignClient;
+import com.fseijo.ms_accounts.service.AccountsService;
+import com.fseijo.ms_accounts.service.CardsService;
+import com.fseijo.ms_accounts.service.LoansService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -18,18 +18,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountsController {
 
-    private final AccountsRepository accountsRepository;
+    private final AccountsService accountsService;
+    private final LoansService loansService;
+    private final CardsService cardsService;
 
     private final AccountsServiceConfig accConfigServ;
-    private final LoansFeignClient loansFeignClient;
-    private final CardsFeignClient cardsFeignClient;
     private static final String ORDER_SERVICE = "detailsForCustomerSupportApp";
     private static final String ORDER_FALLBACK = "myCustomerDetailsFallBack";
 
 
     @RequestMapping(value = "myAccount", method = RequestMethod.POST)
     public List<Accounts> getAccountsByCustomerId(@RequestBody Customer customer) {
-        return accountsRepository.findAllByCustomerId(customer.getCustomerId());
+        return accountsService.getAccountsList(customer);
     }
 
     @RequestMapping(value = "/accounts/properties", method = RequestMethod.GET)
@@ -43,9 +43,9 @@ public class AccountsController {
     @CircuitBreaker(name = ORDER_SERVICE, fallbackMethod = ORDER_FALLBACK)
     @RequestMapping(value = "/myCoustomerDetails", method = RequestMethod.POST)
     public CustomerDetails myCustomerDetails(@RequestBody Customer customer){
-        List<Accounts> accountsList = accountsRepository.findAllByCustomerId(customer.getCustomerId());
-        List<Loan> loansList = loansFeignClient.getLoansDetails(customer);
-        List<Cards> cardsList = cardsFeignClient.getCardsDetails(customer);
+        List<Accounts> accountsList = accountsService.getAccountsList(customer);
+        List<Loan> loansList = loansService.getLoansList(customer);
+        List<Cards> cardsList = cardsService.getCardsList(customer);
 
         CustomerDetails customerDetails = new CustomerDetails();
         customerDetails.setAccounts(accountsList);
@@ -56,8 +56,8 @@ public class AccountsController {
     }
 
     private CustomerDetails myCustomerDetailsFallBack(Customer customer, Throwable throwable){
-        List<Accounts> accountsList = accountsRepository.findAllByCustomerId(customer.getCustomerId());
-        List<Loan> loansList = loansFeignClient.getLoansDetails(customer);
+        List<Accounts> accountsList = accountsService.getAccountsList(customer);
+        List<Loan> loansList = loansService.getLoansList(customer);
         CustomerDetails customerDetails = new CustomerDetails();
         customerDetails.setAccounts(accountsList);
         customerDetails.setLoans(loansList);
