@@ -23,6 +23,8 @@ public class AccountsController {
     private final AccountsServiceConfig accConfigServ;
     private final LoansFeignClient loansFeignClient;
     private final CardsFeignClient cardsFeignClient;
+    private static final String ORDER_SERVICE = "detailsForCustomerSupportApp";
+    private static final String ORDER_FALLBACK = "myCustomerDetailsFallBack";
 
 
     @RequestMapping(value = "myAccount", method = RequestMethod.POST)
@@ -38,7 +40,7 @@ public class AccountsController {
         return jsonStr;
     }
 
-    @CircuitBreaker(name = "detailsForCustomerSupportApp")
+    @CircuitBreaker(name = ORDER_SERVICE, fallbackMethod = ORDER_FALLBACK)
     @RequestMapping(value = "/myCoustomerDetails", method = RequestMethod.POST)
     public CustomerDetails myCustomerDetails(@RequestBody Customer customer){
         List<Accounts> accountsList = accountsRepository.findAllByCustomerId(customer.getCustomerId());
@@ -50,6 +52,15 @@ public class AccountsController {
         customerDetails.setLoans(loansList);
         customerDetails.setCards(cardsList);
 
+        return customerDetails;
+    }
+
+    private CustomerDetails myCustomerDetailsFallBack(Customer customer, Throwable throwable){
+        List<Accounts> accountsList = accountsRepository.findAllByCustomerId(customer.getCustomerId());
+        List<Loan> loansList = loansFeignClient.getLoansDetails(customer);
+        CustomerDetails customerDetails = new CustomerDetails();
+        customerDetails.setAccounts(accountsList);
+        customerDetails.setLoans(loansList);
         return customerDetails;
     }
 }
