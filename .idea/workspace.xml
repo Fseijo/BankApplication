@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cabfd9d2-f668-4253-bae6-8ef6e9525ca5" name="Changes" comment="Update v_2.3.0&#10;Added:&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10;&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer">
-      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/service/AccountsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/service/CardsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/service/LoansService.java" afterDir="false" />
+    <list default="true" id="cabfd9d2-f668-4253-bae6-8ef6e9525ca5" name="Changes" comment="Update v_2.3.1&#10;Added:&#10;- Service Classes&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10; &#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_accounts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms_accounts/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_cards/src/main/java/com/fseijo/ms_cards/controller/CardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms_loans/src/main/java/com/fseijo/ms_loans/controller/LoanController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsCardsApplication" />
         <item itemvalue="Application.MsAccountsApplication" />
         <item itemvalue="Application.MsLoansApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.MSConfigServerApplication" />
+        <item itemvalue="Application.MsCardsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695035300311</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update v_2.3.1&#10;Added:&#10;- Service Classes&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10; &#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer">
+      <created>1695045305866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695045305867</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -193,17 +200,7 @@
     <MESSAGE value="Update v_2.3.0&#10;Added:&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10;&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
     <MESSAGE value="Update v_2.3.0&#10;Added:&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10;&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
     <MESSAGE value="Update v_2.3.0&#10;Added:&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10;&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update v_2.3.0&#10;Added:&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10;&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;&#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ms_accounts/src/main/java/com/fseijo/ms_accounts/service/CardsService.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Update v_2.3.1&#10;Added:&#10;- Service Classes&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10; &#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update v_2.3.1&#10;Added:&#10;- Service Classes&#10;&#10;Done:&#10;-microservices:&#10;* accounts&#10;* cards&#10;* loans&#10;* configServer&#10;- FallBack method&#10;- Circuit Breaker&#10;- CustomerDetails request&#10;- eureka client to ms_accounts application.properties&#10;- eureka client to ms_cards application.properties&#10;- eureka client to ms_loans application.properties&#10;- models to ms_accounts&#10;- Interfaces CardsFeignClient and LoansFeignClient&#10;- Annotation @EnableFeignClient to main classes&#10;- dependencies to pom.xml:&#10; * spring-cloud-starter-netflix-eureka-client&#10; * spring-cloud-starter-openfeign&#10; &#10;Fixed:&#10;Connexion:&#10;-Docker&#10;- ms_acc =&gt; configServer&#10;- ms_cards =&gt; configServer&#10;- ms_loans =&gt; configServer&#10;- docker-compose.yml {DEFAULT, DEV,PROD} ==&gt; configServer" />
   </component>
 </project>

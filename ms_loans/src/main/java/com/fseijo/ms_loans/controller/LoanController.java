@@ -9,6 +9,8 @@ import com.fseijo.ms_loans.model.Loan;
 import com.fseijo.ms_loans.repositories.LoanRepository;
 import com.fseijo.ms_loans.model.Properties;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,9 +24,10 @@ public class LoanController {
 
     private final LoanRepository loanRepository;
     private final LoansServiceConfig loansServiceConfig;
-
+    private final Logger LOGGER = LoggerFactory.getLogger(LoanController.class);
     @RequestMapping(value = "myLoans", method = RequestMethod.POST)
     public List<Loan> getLoansByCustomerId(@RequestBody Customer customer) {
+        LOGGER.info("Searching all loans for customer with id: " + customer.getCustomerId());
         return loanRepository.findAllByCustomerId(customer.getCustomerId());
 //        return loanRepository.getListLoansByCustomerId(customer.getCustomerId());
     }
