@@ -52,7 +52,7 @@ public class AccountsController {
 
 //    @CircuitBreaker(name = ORDER_SERVICE, fallbackMethod = ORDER_FALLBACK)
     @Retry(name = RETRY_ORDER_SERVICE, fallbackMethod = ORDER_FALLBACK)
-    @RequestMapping(value = "/myCoustomerDetails", method = RequestMethod.POST)
+    @RequestMapping(value = "/myCustomerDetails", method = RequestMethod.POST)
     public CustomerDetails myCustomerDetails(@RequestBody Customer customer){
         LOGGER.info("Searching all accounts for customer with id: " + customer.getCustomerId());
         List<Accounts> accountsList = accountsService.getAccountsList(customer);
